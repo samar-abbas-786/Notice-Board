@@ -55,7 +55,7 @@ const UploadNotice = () => {
   return (
     <>
       <Navbar />
-      <div className="flex pt-36 justify-center items-center min-h-screen bg-gradient-to-br from-blue-900 via-black to-cyan-900 p-6">
+      <div className="flex pt-24 justify-center items-center min-h-screen bg-gradient-to-br from-blue-900 via-black to-cyan-900 p-6">
         <div
           className="bg-[#0a1120] border border-cyan-500 shadow-lg shadow-cyan-500/50 
         rounded-lg p-8 w-full max-w-lg text-white"
