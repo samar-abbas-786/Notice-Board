@@ -1,28 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FaHeart } from "react-icons/fa"; // Import heart icon
+import { FaHeart } from "react-icons/fa";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
-
+import { RingLoader } from "react-spinners";
 const API_URL = "https://notice-board-backend.onrender.com/api";
 
 const ShowNotices = () => {
   const [notice, setNotice] = useState([]);
-  const [favorites, setFavorites] = useState({}); // Track favorite notices
+  const [favorites, setFavorites] = useState({});
+  const [loading, setLoading] = useState(false);
   const user = JSON.parse(localStorage.getItem("user"));
 
-  // Fetch Notices
-  const getAllNotices = async () => {
-    const notice = await axios.get(`${API_URL}/notices/getAllNotice`);
-    console.log(notice.data.getAllNotice);
-    setNotice(notice.data.getAllNotice);
-  };
-
   useEffect(() => {
+    const getAllNotices = async () => {
+      try {
+        setLoading(true);
+        const notice = await axios.get(`${API_URL}/notices/getAllNotice`);
+        console.log(notice.data.getAllNotice);
+        setNotice(notice.data.getAllNotice);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching notices:", error);
+        toast.error("Failed to fetch notices.");
+        setLoading(true);
+      }
+    };
+
     getAllNotices();
   }, []);
 
-  // Toggle Favorite Status
   const toggleFavorite = (index) => {
     setFavorites((prev) => ({
       ...prev,
@@ -39,13 +46,22 @@ const ShowNotices = () => {
       toast.error("Failed to delete notice.");
     }
   };
+  if (loading) {
+    return (
+      <h1 className="text-9xl flex w-screen h-screen justify-center items-center  ">
+        <RingLoader
+          size={100}
+          color="#2ecfed"
+          className="text-white text-9xl  rounded-full"
+        />
+      </h1>
+    );
+  }
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-[80vh] text-white text-center bg-gradient-to-br from-black via-slate-800 to-black px-6 pb-12 pt-10">
-      {/* Background Overlay for Glass Effect */}
+    <div className="relative flex flex-col items-center justify-center min-h-[100vh] text-white text-center bg-gradient-to-br from-black via-slate-800 to-black px-6 pb-12 pt-10">
       <div className="absolute inset-0 bg-opacity-50 backdrop-blur-md"></div>
 
-      {/* Title */}
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -55,7 +71,6 @@ const ShowNotices = () => {
         Latest Notices 📢
       </motion.h1>
 
-      {/* Notice Cards */}
       <div className="relative z-10 mt-8 w-full max-w-4xl space-y-6">
         {notice.length > 0 ? (
           notice.map((item, index) => (
@@ -66,7 +81,6 @@ const ShowNotices = () => {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               className="bg-black/30 border border-cyan-500 shadow-lg shadow-cyan-500/40 backdrop-blur-lg p-6 rounded-2xl hover:shadow-cyan-400/50 transition-transform transform hover:scale-[1.02] relative"
             >
-              {/* Favorite Button */}
               <button
                 onClick={() => toggleFavorite(index)}
                 className="absolute top-4 left-4 text-xl transition-transform transform hover:scale-110"
