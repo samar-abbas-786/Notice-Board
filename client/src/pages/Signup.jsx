@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-const API_URL = "http://localhost:8080/api";
+const API_URL = "https://notice-board-backend.onrender.com/api";
 const SignUp = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
