@@ -27,7 +27,6 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-8">
           <NavItem to="/home" label="Home" />
           <NavItem to="/notices" label="Notices" />
-          <NavItem to="/contact" label="Contact" />
 
           {/* Teacher/Admin Dropdown */}
           {(user?.role === "teacher" || user?.role === "admin") && (
@@ -65,7 +64,6 @@ const Navbar = () => {
         <div className="md:hidden absolute top-20 left-0 w-full bg-[#0a1120] border-t border-cyan-500 shadow-lg p-6">
           <MobileNavItem to="/home" label="Home" />
           <MobileNavItem to="/notices" label="Notices" />
-          <MobileNavItem to="/contact" label="Contact" />
 
           {(user?.role === "teacher" || user?.role === "admin") && (
             <>

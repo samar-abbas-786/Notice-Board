@@ -9,6 +9,7 @@ import Profile from "./pages/Profile";
 import Teacher_List from "./pages/Teacher_List";
 import Student_List from "./pages/Student_List";
 import ShowNotices from "./components/shownotices";
+import MyNotice from "./pages/MyNotice";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/studentlist" Component={Student_List} />
           <Route path="/teacherList" Component={Teacher_List} />
           <Route path="/notices" Component={ShowNotices} />
+          <Route path="/myNotices" Component={MyNotice} />
         </Routes>
       </BrowserRouter>
     </div>
