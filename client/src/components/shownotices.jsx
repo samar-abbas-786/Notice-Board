@@ -41,7 +41,7 @@ const ShowNotices = () => {
   };
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-[80vh] text-white text-center bg-gradient-to-br from-black via-slate-800 to-black px-6 pb-12 pt-10">
+    <div className="relative flex flex-col items-center justify-center min-h-[80vh] text-white text-center bg-gradient-to-br from-black via-slate-800 to-black px-6 pb-12 pt-4">
       {/* Background Overlay for Glass Effect */}
       <div className="absolute inset-0 bg-opacity-50 backdrop-blur-md"></div>
 
