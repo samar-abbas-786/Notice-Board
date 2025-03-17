@@ -78,9 +78,6 @@ const SignUp = () => {
               <option value="teacher" className="text-black">
                 Teacher
               </option>
-              <option value="admin" className="text-black">
-                Admin
-              </option>
             </select>
             <button
               onClick={handleForm}
