@@ -6,7 +6,7 @@ const Hero = () => {
   const user = localStorage.getItem("user");
 
   return (
-    <div className="relative pt-4 flex flex-col items-center justify-center h-[100vh] text-white text-center bg-gradient-to-br from-blue-900 via-black to-cyan-900">
+    <div className="relative pt-4 flex flex-col items-center justify-center h-[90vh] text-white text-center bg-gradient-to-br from-blue-900 via-black to-cyan-900">
       <div className="absolute inset-0 bg-opacity-50 backdrop-blur-sm"></div>
 
       <motion.div
