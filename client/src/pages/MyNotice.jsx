@@ -15,7 +15,7 @@ const TeacherNotices = () => {
   useEffect(() => {
     axios
       .get(
-        `https://notice-board-backend.onrender.com/api/notices/getNoticeByTeacher?postedBy=${user._id}`
+        `https://notice-board-backend-2.onrender.com/api/notices/getNoticeByTeacher?postedBy=${user._id}`
       )
       .then((response) => {
         setNotices(response.data.notices);

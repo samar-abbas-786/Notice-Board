@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 
-const API_URL = "https://notice-board-backend.onrender.com/api";
+const API_URL = "https://notice-board-backend-2.onrender.com/api";
 
 const Login = () => {
   const navigate = useNavigate();

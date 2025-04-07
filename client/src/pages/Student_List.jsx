@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import { toast, ToastContainer } from "react-toastify";
 
-const API_URL = "https://notice-board-backend.onrender.com/api";
+const API_URL = "https://notice-board-backend-2.onrender.com/api";
 
 const Student_List = () => {
   const [students, setStudents] = useState([]);
