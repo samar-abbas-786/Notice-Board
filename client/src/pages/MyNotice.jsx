@@ -15,7 +15,7 @@ const TeacherNotices = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:8080/api/notices/getNoticeByTeacher?postedBy=${user._id}`
+        `https://notice-board-backend.onrender.com/api/notices/getNoticeByTeacher?postedBy=${user._id}`
       )
       .then((response) => {
         setNotices(response.data.notices);
@@ -31,7 +31,7 @@ const TeacherNotices = () => {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center  min-h-screen">
         <RingLoader size={80} color="#2ecfed" />
       </div>
     );
