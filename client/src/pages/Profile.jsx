@@ -82,7 +82,10 @@ const Profile = () => {
                 whileTap={{ scale: 0.95 }}
                 className="w-full px-4 py-2 flex items-center justify-center gap-2 text-lg font-semibold text-white bg-yellow-500 rounded-lg transition-transform hover:bg-yellow-400"
               >
-                <FaUpload /> Uploaded Notices
+                <Link className="flex items-center gap-2" to={"/myNotices"}>
+                  {" "}
+                  <FaUpload /> Uploaded Notices
+                </Link>
               </motion.button>
             )}
           </div>

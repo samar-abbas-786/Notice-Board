@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import { FaFileUpload } from "react-icons/fa";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
-const API_URL = "https://notice-board-backend.onrender.com/api";
+const API_URL = "http://localhost:8080/api";
 const UploadNotice = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const [title, setTitle] = useState("");

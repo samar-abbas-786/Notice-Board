@@ -4,7 +4,7 @@ import { FaHeart } from "react-icons/fa";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { RingLoader } from "react-spinners";
-const API_URL = "https://notice-board-backend.onrender.com/api";
+const API_URL = "http://localhost:8080/api";
 
 const ShowNotices = () => {
   const [notice, setNotice] = useState([]);
@@ -111,7 +111,7 @@ const ShowNotices = () => {
               <div className="w-full flex justify-between items-center">
                 {item.filename !== null && (
                   <a
-                    href={`https://notice-board-backend.onrender.com/uploads/${item.filename}`}
+                    href={`http://localhost:8080/uploads/${item.filename}`}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-block mt-4 px-4 py-2 text-[11px] font-semibold text-white bg-cyan-500 rounded-lg transition-transform hover:scale-105 hover:bg-cyan-400"

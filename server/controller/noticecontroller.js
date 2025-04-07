@@ -16,7 +16,7 @@ export const uploadNotice = async (req, res) => {
       description,
       postedBy,
       postedOn,
-      filename: file, 
+      filename: file,
     });
 
     if (!notice) {
@@ -32,7 +32,7 @@ export const uploadNotice = async (req, res) => {
 
 export const getAllNotice = async (req, res) => {
   try {
-    const getAllNotice = await Notice.find().sort({ postedOn: -1 });
+    const getAllNotice = await Notice.find().sort({ postedOn: 1 });
     if (getAllNotice.length == 0) {
       res.status(400).json({ message: "No Notice Available" });
     }
