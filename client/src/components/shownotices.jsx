@@ -119,8 +119,8 @@ const ShowNotices = () => {
                     📄 Download File
                   </a>
                 )}
-                {(user.role === "teacher" && user._id === item.postedBy) ||
-                user.role === "admin" ? (
+                {(user?.role === "teacher" && user._id === item.postedBy) ||
+                user?.role === "admin" ? (
                   <button
                     onClick={() => handleDelete(item._id)}
                     className="mt-4 text-right px-4 py-2 text-[11px] font-semibold text-white bg-red-500 rounded-lg transition-transform hover:scale-105 hover:bg-red-400"

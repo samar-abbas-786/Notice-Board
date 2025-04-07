@@ -61,6 +61,14 @@ const Profile = () => {
                 >
                   <FaUsers /> List All Students
                 </motion.button>
+                <motion.button
+                  onClick={() => navigate("/signup")}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full px-4 py-2 flex items-center justify-center gap-2 text-lg font-semibold text-white bg-amber-400 rounded-lg transition-transform hover:bg-amber-700"
+                >
+                  <FaUsers /> Add Student
+                </motion.button>
               </>
             )}
 

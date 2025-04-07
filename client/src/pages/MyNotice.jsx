@@ -19,6 +19,7 @@ const TeacherNotices = () => {
       )
       .then((response) => {
         setNotices(response.data.notices);
+        console.log(response.data.notices);
 
         setLoading(false);
       })
