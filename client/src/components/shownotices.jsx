@@ -94,7 +94,7 @@ const ShowNotices = () => {
 
               {/* Posted Date */}
               <h1 className="text-right text-sm text-gray-400">
-                {item.postedOn}
+                📆{item.postedOn}
               </h1>
 
               {/* Notice Title */}
