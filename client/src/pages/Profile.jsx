@@ -73,7 +73,7 @@ const Profile = () => {
             )}
 
             {/* Student: Saved Notices */}
-            {user.role === "student" && (
+            {/* {user.role === "student" && (
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -81,7 +81,7 @@ const Profile = () => {
               >
                 <FaSave /> Saved Notices
               </motion.button>
-            )}
+            )} */}
 
             {/* Teacher: Uploaded Notices */}
             {user.role === "teacher" && (
