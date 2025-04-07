@@ -32,7 +32,7 @@ const TeacherNotices = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <RingLoader size={100} color="#2ecfed" />
+        <RingLoader size={80} color="#2ecfed" />
       </div>
     );
   }

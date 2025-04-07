@@ -16,7 +16,7 @@ export const uploadNotice = async (req, res) => {
       description,
       postedBy,
       postedOn,
-      filename: file, // Save filename if uploaded
+      filename: file, 
     });
 
     if (!notice) {
